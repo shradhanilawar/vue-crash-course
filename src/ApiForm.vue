@@ -4,6 +4,7 @@
       <h4>Create An API</h4>
       <h6>Create an API by providing the following details.</h6>
     </div>
+    <!-- Form start -->
     <form @submit.prevent="handleSubmit">
       <section class="section">
         <h5 class="divider">API Details</h5>
@@ -34,6 +35,7 @@
           </div>
         </div>
       </section>
+      <!-- provider details start-->
       <section class="section mt-4">
         <h5 class="divider">Provider Details</h5>
         <div class="row">
@@ -46,6 +48,8 @@
           </div>
         </div>
       </section>
+      <!-- provider details end-->
+
       <section class="section mt-4">
         <h5 class="divider">Consumer Details</h5>
         <div class="row">
@@ -69,6 +73,7 @@
         <button type="reset" class="btn btn-secondary mx-5">Reset</button>
       </div>
     </form>
+        <!-- Form end -->
   </div>
 </template>
 
@@ -117,14 +122,14 @@ export default {
       console.log(this.form);
 
       try {
-        const response = await axios.post('http://localhost:3000/login', this.form);
+        const response = await axios.post('http://localhost:3000/saveData', this.form);
 
         if (response.status === 200) {
-          alert('Form submitted successfully!');
+          alert('Form submitted successfully !!!');
         }
       } catch (error) {
         console.error('Error submitting form:', error);
-        alert('There was an error submitting the form. Please try again.');
+        alert('Please try again !!!');
       }
     },
   },
